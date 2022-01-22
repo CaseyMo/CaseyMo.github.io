@@ -14,7 +14,7 @@
 <meta property="og:description" content="一、基本概念Hexo是一个快速、简洁且高效的博客框架，使用 Markdown（或其他渲染引擎）解析文章，在几秒内即可利用靓丽的主题生成静态网页。关于Hexo的更多内容详见Hexo的官方网站。GitHub Pages是一个静态网站托管服务，能够从建立在GitHub上的仓库中直接存取HTML、CSS和JavaScript文件。你可以通过构建过程来运行这些文件和发布网站。关于GitHub Pages的更">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-01-14T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-01-22T10:43:08.395Z">
+<meta property="article:modified_time" content="2022-01-22T12:33:34.121Z">
 <meta property="article:author" content="casey">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Github Pages">
@@ -69,10 +69,10 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://caseylearning.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://caseylearning.com"></form>
       </div>
     </div>
   </div>
@@ -114,18 +114,27 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 <p>安装完成后，可在终端系统中输入如下命令来查看Hexo版本：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo --version</span><br></pre></td></tr></table></figure>
-<p>上述步骤完成后我们就可以利用Hexo来进行博客的初始化和搭建。首先我们先确定将用于存放搭建博客所需项目文件的文件夹，你可以选择任意的磁盘，并在该磁盘中新建一个文件以用于前述目的。我在D盘中新建了一个名为hexo的文件夹，后续建立的文件都将存储在其中。然后在终端系统中切换到该文件夹所在路径，利用如下命令来创建专门保存博客项目的文件夹，该命令将会在名为hexo的文件夹里面新建一个名为blog的文件夹已保存博客项目。</p>
+<p>上述步骤完成后,我们就可以利用Hexo来进行博客的初始化和搭建。首先我们先确定将用于存放搭建博客所需项目文件的文件夹，你可以选择任意的磁盘，并在该磁盘中新建一个文件以用于前述目的。我在D盘中新建了一个名为hexo的文件夹，后续建立的文件都将存储在其中。然后在终端系统中切换到该文件夹所在路径，利用如下命令来创建专门保存博客项目的文件夹，该命令将会在名为hexo的文件夹里面新建一个名为blog的文件夹已保存博客项目。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br></pre></td></tr></table></figure>
 <p>通过打开blog所在文件夹，我们能够发现已经新建了一些文件，这些文件将用于博客项目的搭建。接下来可以通过下面的命令来直接生成博客：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
 <p>使用如下命令启动服务器：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-<p>三、建立GitHub Pages</p>
+
+<p>三、建立GitHub Pages<br>要利用GitHub Pages服务来托管我们的博客，首先需要在GitHub网站注册一个账号。注册好账号后我们就能够创建属于自己的GitHub Pages服务了。<br>首先登录自己的GitHub账户，在自己的主页点击“Repositories”，点击后将会显示自己的所有仓库。然后点击“New”新建一个名为“username.github.io”的仓库。<br>注意：username是你的用户名，需要为全小写状态。</p>
+<p>四、将Hexo部署到GitHub Pages<br>1、首先找到并打开博客项目文件夹中为“_config.yml”的文件，并在其中添加如下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># ~~~~snip~~~~</span><br><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/username/username.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<p>注：上面的配置中，type指定了使用git进行项目部署；repo指定了部署项目的git仓库的URL；branch指定了将代码同步到仓库中的master分支。通常master分支就是发布项目最终工作成果的分支，也称为项目的主分支。<br>2、安装名为hexo-deployer-git的部署器插件，通过该插件就能实现一键部署。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>3、可以使用下面的命令来实现一键部署到GitHub。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate -d</span><br></pre></td></tr></table></figure>
+<p>注意：因为GitHub更新了<br>4、在浏览器中输入username.github.io就能够看到自己的博客主页了。</p>
+<p>五、将博客绑定到自己的域名<br>我们可以将博客绑定到自己专属的域名。如果暂时还没有购买域名，我们可以在提供域名购买服务的网站（如：万网、GoDaddy等）上进行购买。<br>购买好自己的专属域名后，我们可以利用阿里云控制台或者DNSPod来做一个域名解析服务。在域名解析平台登录成功后，可以添加或选择自己的域名来配置域名解析。点击“添加记录”按钮，创建一个类型为CNAME的域名解析，CNAME类型的解析代表将一个域名解析到另一个域名。<br>完成域名解析等步骤后，还不能马上通过自己的域名访问到博客项目，最后需要在博客项目的source文件夹内添加一个名为“CNAME”的文件（请注意这个文件的名字是全大写字母的），并将自己的专属域名名称写入该文件中。<br>六、总结</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://caseylearning.com/2022/01/15/hexo/" data-id="ckyppemvq0000p0wg1v4a3ede" data-title="基于Windows操作系统利用Hexo框架+GitHub Pages搭建个人博客" class="article-share-link">Share</a>
+      <a data-url="http://caseylearning.com/2022/01/15/hexo/" data-id="ckyppemvq0000p0wg1v4a3ede" data-title="基于Windows操作系统利用Hexo框架+GitHub Pages搭建个人博客" class="article-share-link">Teilen</a>
       
       
       
@@ -145,7 +154,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
+    <h3 class="widget-title">Kategorien</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">个人博客</a></li></ul>
     </div>
@@ -174,7 +183,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archiv</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a></li></ul>
     </div>
@@ -184,7 +193,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
         
