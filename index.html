@@ -124,8 +124,10 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 <p>3、可以使用下面的命令来实现一键部署到GitHub。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate -d</span><br></pre></td></tr></table></figure>
-<p>注意：因为GitHub更新了<br>4、在浏览器中输入username.github.io就能够看到自己的博客主页了。</p>
-<p>五、将博客绑定到自己的域名<br>我们可以将博客绑定到自己专属的域名。如果暂时还没有购买域名，我们可以在提供域名购买服务的网站（如：万网、GoDaddy等）上进行购买。<br>购买好自己的专属域名后，我们可以利用阿里云控制台或者DNSPod来做一个域名解析服务。在域名解析平台登录成功后，可以添加或选择自己的域名来配置域名解析。点击“添加记录”按钮，创建一个类型为CNAME的域名解析，CNAME类型的解析代表将一个域名解析到另一个域名。<br>完成域名解析等步骤后，还不能马上通过自己的域名访问到博客项目，最后需要在博客项目的source文件夹内添加一个名为“CNAME”的文件（请注意这个文件的名字是全大写字母的），并将自己的专属域名名称写入该文件中。<br>六、总结</p>
+<p>注意：因为GitHub于2021年8月13日不再支持密码验证，因此在进行上面一键部署时，在终端窗口提示输入用户名和密码时，应在本应输入密码的时候换成生成的Personal access tokens。关于如何在GitHub生成tokens的步骤可参考此篇关于<a href="https://www.ujcms.com/information/492.html" title="external" target="">Personal access tokens</a>的文章。<br>4、在浏览器中输入username.github.io就能够看到自己的博客主页了。</p>
+<p>五、将博客绑定到自己的域名<br>我们可以将博客绑定到自己专属的域名。如果暂时还没有购买域名，我们可以在提供域名购买服务的网站（如：万网、GoDaddy等）上进行购买。<br>购买好自己的专属域名后，我们可以利用阿里云控制台或者DNSPod来做一个域名解析服务。在域名解析平台登录成功后，可以添加或选择自己的域名来配置域名解析。点击“添加记录”按钮，创建一个类型为CNAME的域名解析，CNAME类型的解析代表将一个域名解析到另一个域名。<br>完成域名解析等步骤后，还不能马上通过自己的域名访问到博客项目，最后需要在博客项目的source文件夹内添加一个名为“CNAME”的文件（请注意这个文件的名字是全大写字母的），并将自己的专属域名名称写入该文件中。</p>
+<p>六、总结<br>在进行博客搭建的过程中虽然遇到了一些问题，但最后还是成功了。在这个过程中，总结了以下几点经验：<br>1、因为自己的GitHub用户名中含有大写英文字符，在建立仓库时仓库的名称中也包含了相应的大写字符，最后通过查找相关资料，需要确保仓库名均为小写状态。<br>2、每一次在重新尝试建立blog项目时，修改“_config.yml”文件后，都需要安装名为hexo-deployer-git的部署器插件。<br>3、在首次将Hexo部署到GitHub Pages时，执行完hexo generate -d命令后，需要在终端窗口提示中输入自己的Personal access tokens。<br>4、最后，最重要的一点就是在搭建博客的过程中一定要有耐心，按照步骤进行，有时可以删掉该blog文件重新再来。搭建过程中遇到问题，找寻相应的解决办法。</p>
+<p>参考资料：<br>1、<a href="https://github.com/jackfrued/Python-100-Days/blob/master/%E7%95%AA%E5%A4%96%E7%AF%87/%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2.md" title="external" target="">使用Hexo搭建自己的博客</a></p>
 
       
     </div>
